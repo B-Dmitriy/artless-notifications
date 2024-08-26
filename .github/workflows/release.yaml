@@ -1,0 +1,33 @@
+name: release
+on:
+  push:
+    branches:
+      - main
+jobs:
+  semantic-release:
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+    environment:
+      name: Semver
+    steps:
+      - uses: actions/checkout@v4
+      - name: setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ">=20.8.1"
+      - name: install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - name: install dependencies
+        run: pnpm install
+      - name: build
+        run: pnpm build
+      - name: release
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release

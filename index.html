@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS example</title>
+
+    <link href="src/notifications.css" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        body.dark {
+            color: white;
+            background-color: #212121;
+        }
+
+        h1 {
+            margin: 24px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Artless-notifications development environment</h1>
+
+    <section class="controls">
+        <button onclick="toggleTheme()">Toggle theme</button>
+        <button onclick="showInfo()">Show info</button>
+        <button onclick="showSuccess()">Show success</button>
+        <button onclick="showWarn()">Show warning</button>
+        <button onclick="showError()">Show error</button>
+    </section>
+
+    <script src="src/notifications.js"></script>
+    <script>
+        const message = new Notificator({
+            root: null,
+            container: null,
+            notesLimit: 3,
+            closing: true,
+            defaultTitle: "Notifiacation!",
+            hideLatency: 3000, // ms
+            position: 'bottom-left' // 'bottom-left', 'bottom-center' ...
+        })
+
+        function showInfo() { message.info("Test info text") }
+        function showSuccess() { message.success("Test success text") }
+        function showWarn() { message.warning("Test warn text") }
+        function showError() { message.error("Test error text") }
+
+        function toggleTheme() {
+            if (!document.body.classList.contains('dark')) {
+                document.body.classList.add('dark')
+            } else {
+                document.body.classList.remove('dark')
+            }
+        }
+    </script>
+</body>
+
+</html>

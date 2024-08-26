@@ -1,0 +1,26 @@
+{
+  "name": "artless-notifications",
+  "version": "0.0.1",
+  "description": "``` Branch name for production releases: [main] Branch name for \"next release\" development: [dev]",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/B-Dmitriy/artless-notifications.git"
+  },
+  "keywords": [
+    "notifications",
+    "js"
+  ],
+  "author": "B-Dmitriy <example@mail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/B-Dmitriy/artless-notifications/issues"
+  },
+  "homepage": "https://github.com/B-Dmitriy/artless-notifications#readme",
+  "devDependencies": {
+    "vite": "5.4.2"
+  }
+}
