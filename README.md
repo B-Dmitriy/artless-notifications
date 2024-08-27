@@ -1,4 +1,8 @@
 # artless-notifications
+For development
+```
+pnpm run dev
+```
 
 ```
 Branch name for production releases: [main]
