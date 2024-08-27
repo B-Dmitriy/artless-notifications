@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "type": "module",
   "files": [
-    "src"
+    "dist"
   ],
   "scripts": {
     "dev": "vite",
