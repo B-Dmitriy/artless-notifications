@@ -1,6 +1,6 @@
 {
   "name": "artless-notifications",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "``` Branch name for production releases: [main] Branch name for \"next release\" development: [dev]",
   "main": "src/index.js",
   "type": "module",
