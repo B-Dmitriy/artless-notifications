@@ -1,0 +1,94 @@
+:root {
+    --artless-notes-item-width: 320px;
+    --artless-notes-item-height: 100px;
+    --artless-notes-border-radius: 8px;
+    --artless-notes-item-padding: 8px 12px;
+
+    --artless-notes-text-color: #212121;
+    --artless-notes-info-bg-color: #C3E1F4;
+    --artless-notes-error-bg-color: #EEBFBF;
+    --artless-notes-warning-bg-color: #FCD6BB;
+    --artless-notes-success-bg-color: #B3E8C2;
+}
+
+.artless-notificator__container {
+    position: absolute;
+    left: 24px;
+    bottom: 24px;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 8px;
+}
+
+.artless-notificator__item {
+    width: var(--artless-notes-item-width);
+    height: var(--artless-notes-item-height);
+    transition: 0.4s;
+    animation-name: show;
+    animation-duration: 0.4s;
+    padding: var(--artless-notes-item-padding);
+    border-radius: var(--artless-notes-border-radius);
+    box-sizing: border-box;
+    color: var(--artless-notes-text-color);
+    font-family: inherit, sans-serif;
+}
+
+.artless-notificator__item>header {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.artless-notificator__item>header>h3 {
+    font-size: 1.1rem;
+    margin: 0 0 12px 0;
+}
+
+.artless-notificator__item>header>button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 2px;
+}
+
+.artless-notificator__item>header>button:hover {
+    opacity: 0.6;
+}
+
+.artless-notificator__item>p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.artless-notificator__hide_left {
+    opacity: 0.5;
+    margin-left: -200px;
+    z-index: -1;
+}
+
+.artless-notificator__info-item {
+    background-color: var(--artless-notes-info-bg-color);
+
+}
+
+.artless-notificator__error-item {
+    background-color: var(--artless-notes-error-bg-color);
+}
+
+.artless-notificator__warning-item {
+    background-color: var(--artless-notes-warning-bg-color);
+}
+
+.artless-notificator__success-item {
+    background-color: var(--artless-notes-success-bg-color);
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
