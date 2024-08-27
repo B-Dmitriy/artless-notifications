@@ -15,7 +15,7 @@ function sleep(ms) {
 //     hideLatency: null,// ms
 //     position: 'bottom-left' // 'bottom-left', 'bottom-center' ...how many?
 // }
-class Notificator {
+export class Notificator {
     #instanse = null
 
     constructor(options) {
